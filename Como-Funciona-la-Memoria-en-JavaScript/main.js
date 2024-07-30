@@ -28,7 +28,14 @@ const objt1 = {
     } 
  Si modificamos en la consola del navegador los valores de las propiedades van a mantenerse diferentes en cada  Objeto, mientas no contenga Objetos dento de Objetos, en ese caso seran iguales, en el ejemplo el objeto C */
 
+const stringifiedComplexObjt = JSON.stringify(objt1);
 
- 
+//JSON.stringify => Metodo estatico de prototipo Json, que nos permite convertir objetos en un string
+
+const objt2 = JSON.parse(stringifiedComplexObjt);
+// JSON.parse( = > caso contrario con este pasamos de String a objetos
+// 
+
+
 
 
