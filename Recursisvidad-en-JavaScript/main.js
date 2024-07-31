@@ -82,28 +82,3 @@ function deepCopy(subject) {
 
     return copySubjetc;
 }
-
-const  studentBase = {
-    
-        name: undefined,
-        email: undefined,
-        username: undefined,
-        age: undefined,
-        approvedCourses: undefined,
-        learingPaths: undefined,
-        socialMedia:{
-            twtter:undefined,
-            instagram: undefined,
-            facebook :undefined,
-        }
-}
-
-const createStudent() {
-    return{
-        name: ,
-        age: ,
-
-    };
-}
-
-const juan = createStudents (); //{}
