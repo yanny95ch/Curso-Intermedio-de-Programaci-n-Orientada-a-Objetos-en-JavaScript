@@ -83,11 +83,44 @@ learingPaths,
 }
 
 
-const juan = createStudent ({
+/*const juan = createStudent ({
     name: 'Juanito',
     // age: 18,
     email: 'juanito@gmail.com',
     // twitter: 'fjuandc'
 }); //{}
+*/
 
+//-------------------------//--------------------------------
+
+
+const  studentBase = {
+    name: undefined,
+     email: undefined,
+     username: undefined,
+     age: undefined,
+     approvedCourses: undefined,
+     learingPaths: undefined,
+     socialMedia:{
+         twitter:undefined,
+         instagram: undefined,
+         facebook :undefined,
+     }
+ }
+
+ const  juan = deepCopy(studentBase);
+
+ Object.seal(juan); // SE protegen todas las propiedades de nuestro objeto para que no se puedadn  borrar 
+
+ Object.isSealed(juan); // Nos sirve para consultar si el objeto tien todas sus propiedades con seal es decir con configurable : false
+
+ Object.freeze(juan);
+
+ Object.isFrozen(juan);// writable: false  no se pueda editar  las propiedades
+ 
+ 
+//  Object.defineProperty(juan, 'name',{
+//     value: 'Lulito',
+//     configurable:false,
+ //});
 
