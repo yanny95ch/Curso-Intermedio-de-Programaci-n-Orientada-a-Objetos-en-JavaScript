@@ -28,3 +28,82 @@ function recursiva (numbersArray){
 
     }
 }
+
+
+//--------------------------------//--------------------------------
+
+const objt1 = { 
+    a: 'a',
+    b: 'b',
+    c:{
+        d:'D',
+        e:'E',
+    },
+    editA(){
+        this.a = 'AAAAA'
+    }
+};
+
+function isObject(subject){
+    return typeof subject == 'object';
+};
+
+function isArray(subject){
+    return Array.isArray(subject);
+};
+
+function deepCopy(subject) {
+    let copySubjetc;
+
+    const subjectIsObject = isObject(subject);
+    const subjectIsArray =isArray(subject);
+     if (subjectIsArray) {
+        copySubjetc = [];
+     }else if (subjectIsObject){
+        copySubjetc = {};
+     }else{
+        return subject;
+     }
+
+
+     for (key in subject){
+        const keyIsObject = isObject(subject[key]);
+
+        if(keyIsObject){
+            copySubjetc[key]= deepCopy(subject[key]);
+        }else{
+            if(subjectIsArray){
+                copySubjetc.push(subject[key]);
+            }else{
+                copySubjetc[key] = subject[key];
+            }
+        }
+     }
+
+    return copySubjetc;
+}
+
+const  studentBase = {
+    
+        name: undefined,
+        email: undefined,
+        username: undefined,
+        age: undefined,
+        approvedCourses: undefined,
+        learingPaths: undefined,
+        socialMedia:{
+            twtter:undefined,
+            instagram: undefined,
+            facebook :undefined,
+        }
+}
+
+const createStudent() {
+    return{
+        name: ,
+        age: ,
+
+    };
+}
+
+const juan = createStudents (); //{}
