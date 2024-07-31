@@ -67,8 +67,13 @@ approvedCourses,
 learingPaths,
 
 }) {
-    return {
-        name,
+
+    const private={
+
+        '_name':name, 
+    };
+
+    const public = {
         email,
         age,
         approvedCourses,
@@ -79,17 +84,29 @@ learingPaths,
             instagram,
         },
 
+
+        readName(){
+            return private['_name'];
+        },
+  
+        changeName(newName){
+            private['_name'] = newName;
+        },
+
     };
+
+
+    return public;
 }
 
 
-/*const juan = createStudent ({
+const juan = createStudent ({
     name: 'Juanito',
     // age: 18,
     email: 'juanito@gmail.com',
     // twitter: 'fjuandc'
 }); //{}
-*/
+
 
 //-------------------------//--------------------------------
 
@@ -108,13 +125,13 @@ const  studentBase = {
      }
  }
 
- const  juan = deepCopy(studentBase);
+ //const  juan = deepCopy(studentBase);
 
  Object.seal(juan); // SE protegen todas las propiedades de nuestro objeto para que no se puedadn  borrar 
 
  Object.isSealed(juan); // Nos sirve para consultar si el objeto tien todas sus propiedades con seal es decir con configurable : false
 
- Object.freeze(juan);
+ Object.freeze(juan);// SE protegen todas las propiedades de nuestro objeto para que no se puedadn  borrar y ademas que no se puedan editar writable:false
 
  Object.isFrozen(juan);// writable: false  no se pueda editar  las propiedades
  
@@ -123,4 +140,6 @@ const  studentBase = {
 //     value: 'Lulito',
 //     configurable:false,
  //});
+//Esto es una forma mas larga de proteger las propiedades una a una 
+
 
